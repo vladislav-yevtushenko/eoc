@@ -3,7 +3,7 @@
 ---
 # yamllint disable rule:line-length
 name: homebrew-formulas-update
-on:
+'on':
   push:
     tags:
       - '*'

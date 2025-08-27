@@ -1,8 +1,9 @@
-echo "Created $FORMULA_FILE"
-
 #!/usr/bin/env bash
+
+# SPDX-FileCopyrightText: Copyright (c) 2022-2025 Objectionary.com
+# SPDX-License-Identifier: MIT
+
 # This script checks all tags in the repo and creates missing versioned Homebrew formula files.
-# Usage: ./create_versioned_formula.sh [GITHUB_TOKEN]
 
 set -euo pipefail
 
@@ -32,7 +33,7 @@ for TAG in $TAGS; do
   echo "Processing $TAG..."
   curl -L -o "/tmp/eoc-${VERSION}.tar.gz" "$TARBALL_URL"
   SHA256=$(shasum -a 256 "/tmp/eoc-${VERSION}.tar.gz" | awk '{print $1}')
-  cat > "$FORMULA_FILE" <<EOF
+  cat >"$FORMULA_FILE" <<EOF
 require "language/node"
 class EocAT${CLASSVER} < Formula
   desc "Command-line Tool-Kit"
