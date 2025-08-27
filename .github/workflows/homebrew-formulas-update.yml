@@ -4,9 +4,8 @@
 # yamllint disable rule:line-length
 name: homebrew-formulas-update
 'on':
-  push:
-    tags:
-      - '*'
+  release:
+    types: [published]
 concurrency:
   group: homebrew-formula-up-${{ github.ref }}
   cancel-in-progress: true
