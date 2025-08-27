@@ -25,7 +25,7 @@ You can also use [Homebrew] (on macOS):
 
 ```bash
 brew tap objectionary/eoc https://github.com/objectionary/eoc
-brew install objectionary/eoc/eolang@0.31.0
+brew install objectionary/eoc/eoc@0.31.0
 ```
 
 Then, you write a simple [EO](https://www.eolang.org) program in `hello.eo` file
