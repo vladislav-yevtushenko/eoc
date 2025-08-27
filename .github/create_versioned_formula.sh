@@ -18,6 +18,13 @@ else
   AUTH_HEADER=""
 fi
 
+if [ -d "$FORMULA_DIR" ]; then
+  echo "Formula directory $FORMULA_DIR already exists."
+else
+  echo "Creating formula directory $FORMULA_DIR..."
+  mkdir -p "$FORMULA_DIR"
+fi
+
 echo "Fetching tags from $GITHUB_REPO..."
 TAGS=$(curl -s $AUTH_HEADER "$GITHUB_API" | grep '"name"' | cut -d '"' -f 4)
 

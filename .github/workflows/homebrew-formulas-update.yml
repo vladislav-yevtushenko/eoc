@@ -26,7 +26,7 @@ jobs:
         uses: peter-evans/create-pull-request@v7
         with:
           sign-commits: true
-          branch: homebrew-formula-up
+          branch: homebrew-formulas-update
           commit-message: 'Update Homebrew versioned formula files'
           delete-branch: true
           title: 'Update Homebrew versioned formula files'
