@@ -37,7 +37,8 @@ const request = require('sync-request'),
       }
       try {
         const repo = 'org/eolang/eo-maven-plugin',
-          url = `https://repo.maven.apache.org/maven2/${repo}/${ver}/${repo.replace(/\//g, '.')}-${ver}.pom`,
+          artifactId = 'eo-maven-plugin',
+          url = `https://repo.maven.apache.org/maven2/${repo}/${ver}/${artifactId}-${ver}.pom`,
           res = request('GET', url, {timeout: 10000, socketTimeout: 10000});
         return res.statusCode === 200;
       } catch (e) {
