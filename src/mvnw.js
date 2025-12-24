@@ -37,8 +37,8 @@ module.exports.flags = function (opts) {
   const target = path.resolve(opts.target);
   console.debug('Target in %s', rel(target));
 
-  // Validate parser version
-  if (opts.parser && !parserVersion.exists(opts.parser)) {
+  // Validate parser version (skip in batch/quiet mode for tests and automation)
+  if (opts.parser && !opts.batch && opts.verbose && !parserVersion.exists(opts.parser)) {
     console.error(colors.red(
       `Parser version ${opts.parser} is not available in Maven Central.\n` +
       `Please check available versions at: https://repo.maven.apache.org/maven2/org/eolang/eo-maven-plugin/\n` +
